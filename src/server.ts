@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import path from "path"
 // import mustache from "mustache-express"
 
-// import { router } from "./routes/apiRouter"
+import { router } from "./routes/apiRouter"
 
 import { RequestHandler } from "express"
 
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, "../public")))
 
 //Routes
-// app.use("/api", router)
+app.use("/api", router)
 
 app.use<RequestHandler>((req, res) => {
   res.status(404).json({

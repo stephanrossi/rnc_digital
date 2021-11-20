@@ -3,4 +3,6 @@ import { Router } from "express"
 
 export const router = Router()
 
-// router.get("/", apiController.Home)
+router.get("/", (req, res) => {
+  res.send("Home")
+})
